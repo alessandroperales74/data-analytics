@@ -24,7 +24,7 @@ Entonces, ¿cuál es la solución a este primer escenario?
 
 Primero, como input se le pide al usuario que ingrese el año y mes que se va a descargar en SAP, para que el script determine la fecha inicial (que es el primer día del mes) y el último (que va a depender del día). Con esto garantizamos que no se suba una fecha no válida, como una fecha futura o un caracter  no numérico.
 
-![Fecha SAP](/images/fecha_sap.jpg)
+![Fecha SAP](/etl-accounts-payable/images/fecha_sap.jpg)
 
 #### Conexión SAP
 
@@ -32,11 +32,11 @@ Para poder conectarnos a SAP les paso un link donde explico más a detalle cómo
 
 Una vez definida la sesión, hacemos el proceso de descarga. A continuación les muestro un script de descarga de la transacción FBL1H.
 
-![Descarga SAP](/images/descarga_sap.jpg)
+![Descarga SAP](/etl-accounts-payable/images/descarga_sap.jpg)
 
 Así como este, tengo un script para cada transacción necesaria.
 
-![Main SAP](/images/main.jpg)
+![Main SAP](/etl-accounts-payable/images/main.jpg)
 
 ### 2. Carga SQL
 
@@ -58,57 +58,57 @@ def validar_sql(nombre_tabla,cod_periodo):
 
 A continuación, un ejemplo de cómo manejo mi conexión a la Base de Datos.
 
-![Transformación SAP1](/images/sql_transformacion.jpg)
+![Transformación SAP1](/etl-accounts-payable/images/sql_transformacion.jpg)
 
 Finalmente, este es un ejemplo de una transformación de un archivo plano con Python.
 
-![Transformación SAP2](/images/transformacion_sap.jpg)
+![Transformación SAP2](/etl-accounts-payable/images/transformacion_sap.jpg)
 
 #### Validar carga en la BBDD
 
 Una vez que termino de correr todo el proceso, reviso si los datos están actualizados hasta el último periodo. A la fecha que subo esto, el último periodo fue setiembre 2024 (202409), así que puedo ver que mi base de datos está actualizado en el DB Browser.
 
-![DB Browser](/images/db-browser.jpg)
+![DB Browser](/etl-accounts-payable/images/db-browser.jpg)
 
 Este es un ejemplo de un Query para validar el proceso de carga.
 
-![Query SQL](/images/sql_query.jpg)
+![Query SQL](/etl-accounts-payable/images/sql_query.jpg)
 
 #### Optimización de la Base de Datos
 
 Posteriormente ya me dedico a optimizar el rendimiento, como la creación de índices, vistas, etc.
 
-![DB Browser 2](/images/db-browser2.jpg)
+![DB Browser 2](/etl-accounts-payable/images/db-browser2.jpg)
 
 **Índices**
 
-![DB Browser](/images/index_sql.jpg)
+![DB Browser](/etl-accounts-payable/images/index_sql.jpg)
 
 **Vistas**
 
-![DB Browser](/images/views_sql.jpg)
+![DB Browser](/etl-accounts-payable/images/views_sql.jpg)
 
 ### 3. Estructura del Proyecto
 
 Aquí les muestro cómo he manejado la estructura de mi proyecto. Por un lado tengo los archivos en Python que importo como módulos y en otro lado tengo todos mis Queries de SQL.
 
-![Estructura](/images/estructura_sql.jpg)
+![Estructura](/etl-accounts-payable/images/estructura_sql.jpg)
 
 ### 4. Power BI
 
 Utilizando una conexión ODBC para Power BI, ingresamos el Query que extrae nuestra información necesaria el cual podemos ir probando en DB Browser. Si el resultado es correcto ahí, entonces debe funcionar en Power BI.
 
-![ODBC Power BI](/images/odbc_powerbi.jpg)
+![ODBC Power BI](/etl-accounts-payable/images/odbc_powerbi.jpg)
 
 Dicho query nos brinda la información necesaria para hacer la reportería necesaria. En este caso, estoy extrayendo información de las fechas de cada una de las etapas del proceso.
 
 Como imaginarán, no puedo compartir los datos debido a que son confidenciales, pero les puedo mostrar el proceso que hago para actualizar este Dashboard, y el diseño que utilizamos para la medición de tiempos del proceso.
 
-![Power BI 1](/images/power-bi.png)
+![Power BI 1](/etl-accounts-payable/images/power-bi.png)
 
 Finalmente, podemos entrar a cada una de las etapas para ver el detalle por cada uno de los aspectos relevantes para el negocio.
 
-![Power BI 2](/images/power-bi2.jpg)
+![Power BI 2](/etl-accounts-payable/images/power-bi2.jpg)
 
 ### 5. Conclusiones
 
