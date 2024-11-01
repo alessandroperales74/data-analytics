@@ -179,4 +179,4 @@ Finalmente, cuando ya tenemos el dataframe cargado, ya podremos usarlo para hace
 
 ![BCR](images/requests-power-bi-4.jpg)
 
-Espero que les haya servido. Aquí un link al código completo: ![requests-tipo-de-cambio.py](images/requests-tipo-de-cambio.py')
+Espero que les haya servido. Aquí un link al código completo: ![requests-tipo-de-cambio.py](images/requests-tipo-de-cambio.py)
