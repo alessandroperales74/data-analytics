@@ -175,7 +175,7 @@ A continuación, seleccionamos el DataFrame generado de nuestro interés. Según
 
 ![BCR](images/requests-power-bi-3.jpg)
 
-Finalmente, cuando ya tenemos el dataframe cargado, ya podremos usarlo para hacer gráficas, relaciones con otras tablas, etc. Este es un ejemplo de una gráfica del evolutivo del tipo de cambio, según la normativa SBS.
+Finalmente, cuando ya tenemos el dataframe cargado, ya podremos usarlo para hacer gráficas, relaciones con otras tablas, etc. Este es un ejemplo de una gráfica del evolutivo del tipo de cambio de la SBS.
 
 ![BCR](images/requests-power-bi-4.jpg)
 
